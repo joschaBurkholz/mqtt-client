@@ -61,8 +61,7 @@ public class MqttServiceBuilder {
 
 
     public MqttService build() throws MqttException {
-        MqttClient client = null;
-        client = new MqttClient(this.getServerUri(), clientId);
+        MqttClient client = new MqttClient(this.getServerUri(), clientId);
         client.connect();
         return new MqttService(server, objectMapper, client);
     }
