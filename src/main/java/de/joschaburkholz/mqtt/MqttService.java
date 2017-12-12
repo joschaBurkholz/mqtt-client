@@ -23,6 +23,10 @@ public class MqttService {
         this.mqttClient = mqttClient;
     }
 
+    public void subscribe(){
+
+    }
+
     public void sendMessage(String topic, Object payload) throws MqttConnectionException, JsonProcessingException {
         this.connect();
         MqttMessage message = new MqttMessage(objectMapper.writeValueAsString(payload).getBytes());
